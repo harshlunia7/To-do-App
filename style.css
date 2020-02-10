@@ -1,0 +1,185 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit; }
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; }
+  @media only screen and (max-width: 68.75em) {
+    html {
+      font-size: 50%; } }
+
+body {
+  height: 100%;
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #655A56;
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  background-size: cover cover;
+  background-repeat: no-repeat;
+  min-height: calc(100vh - 2 * 4vw); }
+
+.container {
+  max-width: 120rem;
+  margin: 4vw auto;
+  background-color: #fff;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 2rem 6rem 0.5rem rgba(101, 90, 86, 0.2);
+  display: grid;
+  grid-template-rows: 10rem minmax(100rem, auto);
+  grid-template-columns: 1.5fr 0.5fr;
+  grid-template-areas: "head head" "list manipulation"; }
+  @media only screen and (max-width: 68.75em) {
+    .container {
+      width: 100%;
+      margin: 0;
+      border-radius: 0; } }
+.header {
+  grid-area: head;
+  background-color: #F9F5F3;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .header__logo {
+    margin-left: 4rem;
+    height: 7rem;
+    display: block; }
+  .app__name {
+  	margin-left: 4rem;
+  	height: 6.5rem;
+  	display: flex;
+  	align-items: center;
+  	justify-content: center;
+  	font-size: 300%;
+  	font-family: 'Bangers', cursive;}
+
+.btn-tiny {
+  height: 1.75rem;
+  width: 1.75rem;
+  border: none;
+  background: none;
+  cursor: pointer; }
+  .btn-tiny:focus {
+    outline: none; }
+  .btn-tiny:not(:last-child) {
+    margin-right: .3rem; }
+
+.todo {
+  grid-area: list;
+  padding: 3rem 4rem 0 2rem;
+  display: flex;
+  flex-direction: column; }
+  .todo__list {
+    list-style: none;
+    max-height: 77rem;
+     }
+  .todo__item {
+    display: flex;
+    align-items: flex-start;
+    padding: 1.3rem 0;
+    border-bottom: 1px solid #F2EFEE;
+    position: relative; }
+  .todo__description {
+    flex: 1;
+    font-size: 2rem;
+    font-family: 'Lato', sans-serif;
+    margin-top: .4rem;
+    margin-right: 1.5rem; }
+  .todo__delete {
+    margin-top: .5rem;
+    position: absolute;
+    right: 0;
+    width: 3rem;
+    color: #f4511e;
+    padding: 0.2rem;
+    display: flex;
+    font-size: 200%;
+    justify-content: center;
+    visibility: hidden;
+    border-radius: 6px;
+    opacity: 0;
+    transition: all .5s; }
+  .todo__comp{
+    margin-top: .5rem;
+    margin-right: 6rem;
+    position: relative;
+    padding: 0.4rem 1rem 0.4rem 1rem;
+    color: #FFFFFF;
+    background-color: #4cd137;
+    display: flex;
+    justify-content: center;
+    border-radius: 6px;
+    transition: all .5s;
+    visibility: hidden;
+    opacity: 0; 
+    transition: all .5s;}
+   .todo__comp--clicked{
+    background-color: #f4511e;
+   }
+  .todo__item:hover .todo__delete{
+    opacity: 1;
+    visibility: visible; }
+
+  .todo__item:hover .todo__comp{
+    opacity: 1;
+    visibility: visible; }
+
+.mani {
+  grid-area: manipulation;
+  padding: 3rem 4rem 0 2rem;
+  display: flex;
+  flex-direction: column;}
+
+	.mani__list {
+	    list-style: none;
+	    max-height: 77rem;}
+
+	.mani__item {
+	    display: flex;
+	    align-items: flex-start;
+	    padding: 2rem 0;
+	    border-bottom: 1px solid #F2EFEE;
+	    position: relative; 
+		justify-content: center;}
+	.input__task{
+		word-wrap: break-word;
+		margin-left: 2rem;
+	}
+	.input__task:hover {
+		transform: translateY(2px);
+	}
+
+	.task__btn--add, .task__btn--clear, .task__btn--alphSort, .task__btn--timeSort{
+		display: flex;
+		height: 50%;
+		width: 40%;
+		align-items: center;
+    padding: 0.4rem 1rem 0.4rem 1rem;
+		justify-content: center;
+    background-color: #FFFFFF;
+    border-radius: 6px;
+	}
+  .task__btn--clear{
+    width: 40%;
+    background-color: #f4511e;
+  }
+
+  .task__btn--add:hover, .task__btn--clear:hover, 
+  .task__btn--alphSort:hover, .task__btn--timeSort:hover{
+		transform: translateY(2px);
+		width: 70%;
+    background-color: #4cd137;
+    color: #FFFFFF;
+	}
+
+
+
+
+
